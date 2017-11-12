@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Past Project/過往項目</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+    <ion-content padding id="page15">
+      <h2 style="color:#000000;">
+          Poll Name/投票名稱
+          <br>
+      </h2>
+      <p style="font-size:20px">
+          {{pastPoll.pollName}}
+      </p>
+      <div class="show-list-numbers-and-dots">
+        <p style="font-weight: bold">
+          Project/項目名稱
+                <br>
+        </p>
+        <p>
+          {{pastPoll.projectName}}
+        </p>
+        <p style="color:#000000;font-weight: bold">
+        Summry項目概要
+        <br>
+          </p>
+          <p>
+              {{pastPoll.summary}}
+          </p>
+      </div>
+      <div class="show-list-numbers-and-dots">
+        <p>
+          Upload Files/已上載的文件
+                <br>
+      <ion-list>
+        <ion-item
+            *ngFor="let file of pollFiles"
+            >
+            Files/文件: {{file}}
+        </ion-item>    
+      </ion-list>    
+      </p>
+      </div>
+      <div class="spacer" style="width:300px;height:3px;" ></div>
+
+      <div class="spacer" style="width:300px;height:50;"></div>
+      <div style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="color:#000000;font-size:15px;">
+          Voted by {{pastPoll.endTime}}
+          <br>
+          投票截止时间: {{pastPoll.endTime}}
+        </p>
+      </div>
+    </ion-content>

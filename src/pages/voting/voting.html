@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Voting Page</ion-title>
+  </ion-navbar>
+
+</ion-header>
+  <ion-content padding id="page15">
+    <h6 style="color:#000000;">
+        Poll Name/投票名稱:
+        <br>
+    </h6>
+    <h2 style="color: #488aff; font-weight: bold;">
+        {{poll.pollName}}
+    </h2>
+    <div class="show-list-numbers-and-dots">
+      <p style="font-weight:bold">
+        Project/項目名稱:
+              <br>
+      </p>
+      <p>
+          {{poll.projectName}}
+      </p>
+      <p style="color:#000000;font-weight:bold">
+          Summary/項目概要:
+      </p>
+      <!-- <p style="color:#000000;">
+        {{poll.summary}}
+      </p> -->
+
+      <p style="color:#000000;" [innerHTML] = "poll.summary">
+          
+        </p>
+    </div>
+    <div class="show-list-numbers-and-dots">
+        <p>
+          Upload Files/已上載的文件
+                <br>
+      <ion-list>
+        <ion-item
+            *ngFor="let file of files"
+            (click)=onViewFile(file)
+            >
+            Files/文件: {{file.fileName}}
+        </ion-item>    
+      </ion-list>    
+      </p>
+      </div>
+    <div class="spacer" style="width:300px;height:3px;" ></div>
+    <button 
+      ion-button 
+      color="balanced" 
+      block
+      (click)=onViewMessage(option)
+      [disabled]="isDisabled" 
+      *ngFor="let option of poll.options"
+    >
+      <!-- <ion-icon *ngIf="option=='Yes'" name="thumbs-up"> {{option}}</ion-icon> 
+      <ion-icon *ngIf="option=='No'" name="thumbs-down"> {{option}}</ion-icon> 
+      <ion-icon *ngIf="option=='Abstain'" name="hand"> {{option}}</ion-icon>  -->
+        {{option}}
+    </button>
+    <div class="spacer" style="width:300px;height:50;"></div>
+    <div style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;font-size:15px;">
+        Vote by {{poll.endTime}}
+        <br>
+        投票截止时间 {{poll.endTime}}
+      </p>
+    </div>
+  </ion-content>
+

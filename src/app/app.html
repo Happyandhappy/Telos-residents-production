@@ -1,0 +1,45 @@
+<ion-menu id="myMenu" [content]="nav">
+    <ion-header>
+            <ion-toolbar>
+                    <ion-title>
+                        Menu/菜單
+                    </ion-title>
+                </ion-toolbar>
+      </ion-header>
+        <ion-content>
+                <button ion-item (click) = 'openPage(tabsPage)'>
+                    <ion-icon name="keypad" item-left></ion-icon>
+                    Home/主頁
+                </button>
+                <button ion-item (click) = 'openPage(profilePage)'>
+                    <ion-icon name="person" item-left></ion-icon>
+                    Profile/我的資料
+                </button>
+                <!-- <button ion-item
+                (click) = 'openPage(settingsPage)'
+                >
+                    <ion-icon 
+                    name="settings" 
+                    item-left
+                    ></ion-icon>
+                    Settings/設置
+                </button> -->
+                <button ion-item (click) = 'openPage(aboutPage)'>
+                    <ion-icon name="information-circle" item-left></ion-icon>
+                    About/關於
+                </button>
+                <!-- <button ion-item
+                (click) = 'translate()'
+                >
+                        <ion-icon name="arrow-round-back" item-left></ion-icon>
+                        {{"TRANSLATE" | translate}}
+                    </button> -->
+                <button ion-item (click) = 'logout()'>
+                    <ion-icon name="arrow-round-back" item-left></ion-icon>
+                    Logout/登出
+                </button>
+        </ion-content>
+</ion-menu>
+    
+
+<ion-nav [root]="signinPgae" #nav></ion-nav>

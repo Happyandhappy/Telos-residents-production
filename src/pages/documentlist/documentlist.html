@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Document List/文件列表
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+    <h5 style="color:#000000;">
+        Project Documents/項目文件
+    </h5>
+    <ion-list>
+      <ion-item
+      style="font-size: 13px"
+      *ngFor="let file of pollFiles"
+      color="positive"
+      (click)="onClickDocument()"
+      >
+        Document/文件: 
+        <br>
+        {{file}}
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:10px;"></div>
+  </ion-content>

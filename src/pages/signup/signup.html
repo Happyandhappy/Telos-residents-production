@@ -1,0 +1,95 @@
+<ion-header>
+      <ion-navbar>
+      </ion-navbar>
+    </ion-header>
+   <ion-content padding>
+        <div class="spacer" style="width:300px;height:8px;"></div>
+        <form novalidate (ngSubmit)="onSignup(user)" [formGroup]="user">
+          <h1>
+            Signup
+          </h1>
+          <div class="spacer" style="width:300px;height:40px;"></div>
+          <div [formGroup]="user">
+            <ion-item style="font-size: 13px">
+              <ion-label>Full Name:</ion-label>
+              <ion-input
+              formControlName="fullName"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div [formGroup]="user">
+              <ion-item style="font-size: 13px">
+                <ion-label>Email:</ion-label>
+                <ion-input
+                formControlName="email"
+                type="email"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <ion-item no-lines *ngIf="( user.get('email').hasError('pattern') || user.get('email').hasError('required') ) && user.get('email').touched">    
+              <div class="error" *ngIf = "user.get('email').hasError('required') && user.get('email').touched">
+                  <ion-icon name = "warning"></ion-icon> Email is required  
+              </div>            
+              <div class="error" *ngIf ="user.get('email').hasError('pattern') && user.get('email').touched">
+                  <ion-icon name = "warning"></ion-icon> Email is not valid
+              </div>
+            </ion-item>
+            <div [formGroup]="user">
+              <ion-item style="font-size: 13px">
+                <ion-label>Estate:</ion-label>
+                <ion-input type="text"
+                formControlName="estateName"
+                ></ion-input>
+              </ion-item>
+            </div>
+            <div [formGroup]="user">
+            <ion-item style="font-size: 13px">
+              <ion-label>
+                Invite Code:
+              </ion-label>
+              <ion-input type="text" placeholder=""
+              formControlName="inviteCode"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div [formGroup]="user">
+            <ion-item style="font-size: 13px">
+              <ion-label>
+                Password
+              </ion-label>
+              <ion-input type="password" placeholder=""
+              formControlName="password"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div [formGroup]="user">
+            <ion-item style="font-size: 13px">
+              <ion-label>
+                Re-enter password
+              </ion-label>
+              <ion-input type="password" placeholder=""
+              formControlName="re_password"
+              ></ion-input>
+            </ion-item>
+          </div>
+          <ion-item no-lines *ngIf="( user.get('re_password').hasError('equalTo') || user.get('re_password').hasError('required') ) && user.get('re_password').touched">
+            
+            <div class="error" *ngIf="user.get('re_password').hasError('required') && user.get('re_password').touched">
+              <ion-icon name = "warning"></ion-icon> Confirm password is required
+            </div>
+            <div class="error" *ngIf="user.get('re_password').hasError('equalTo') && user.get('re_password').touched">
+              <ion-icon name = "warning"></ion-icon> Password Mismatch
+            </div>
+          </ion-item>
+          <div class="spacer" style="width:300px;height:53.9773px;"></div>
+          <button 
+          ion-button color="positive" 
+          block 
+          type="submit"
+          [disabled]="user.invalid"          
+          >
+            Sign up
+          </button>
+        </form>
+      </ion-content>
+  

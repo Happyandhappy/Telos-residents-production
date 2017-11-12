@@ -1,0 +1,8 @@
+{
+  "name": "Telos_mockups",
+  "app_id": "4358e0ba",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

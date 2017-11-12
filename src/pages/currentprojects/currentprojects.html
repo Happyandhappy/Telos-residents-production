@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Current Polls/近期投票
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card class="withBack" *ngFor="let poll of currentPolls" (click)=onClickProject(poll)>
+        <img src="assets/img/po.jpg" style="opacity: 0.3; height: 40%;"/>
+        <div class="card-title">
+            <h5><ion-icon name="card" style="color: #488aff"></ion-icon> Name/投票名稱：</h5>
+            <h2 style="font-size: 18px; font-weight: bold; margin-top: 14px;">{{poll.pollName}}</h2>
+        </div>
+        <div class="card-subtitle">
+          <h5><ion-icon name="brush" style="color: #488aff"></ion-icon> Project Name/項目名稱:</h5>
+          <h2 style="font-size: 18px; font-weight: bold; margin-top: 14px;">{{poll.projectName}}</h2>
+        </div>
+        <div class="card-subtitle">
+          <p style="padding:10px; color: #488aff; float:right">
+            Vote by {{poll.endTime}}<br>
+            投票截止時間: {{poll.endTime}}
+          </p>
+        </div>
+    </ion-card>
+  <!-- <ion-card *ngFor="let poll of currentPolls" (click)=onClickProject(poll)>    
+    <ion-card-header text-wrap>
+      <h5 style="font-size: 14px;"><ion-icon name="card" style="color: #488aff"></ion-icon> Name/投票名稱：</h5>
+      <h2 style="font-size: 18px; font-weight: bold; margin-top: 14px;">{{poll.pollName}}</h2>
+    </ion-card-header>
+    <div class="spacer" style="width:300px;height:10px;"></div>
+    <ion-card-content>
+      <h5 style="font-size: 14px;"><ion-icon name="brush" style="color: #488aff"></ion-icon> Project Name/項目名稱:</h5>
+      <h2 style="font-size: 18px; font-weight: bold; margin-top: 14px;">{{poll.projectName}}</h2>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <p style="padding:10px; color: #488aff; float:right">
+          Vote by {{poll.endTime}}<br>
+          投票截止時間: {{poll.endTime}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+</ion-content>
