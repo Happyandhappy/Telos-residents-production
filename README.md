@@ -11,4 +11,4 @@ $ ionic serve
 ```
 
 
-<img src="https://github.com/Happyandhappy/Telos-residents-production/screenshot.png" alt="alt text" width="360" height="640">
+<img src="https://github.com/Happyandhappy/Telos-residents-production/screenshot1.png" alt="alt text" width="360" height="640">
